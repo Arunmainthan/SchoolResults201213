@@ -3,7 +3,7 @@
 <%@taglib uri="http://displaytag.sf.net" prefix="display"%>
 
 <display:table export="true" id="tableData" name="results"
-			requestURI="/pages/displayAllResultsSort.action" pagesize="5">
+			requestURI="/pages/displayAllResultsSort.action" pagesize="1">
 			<display:column property="school.schoolName" title="School"
 				sortable="true" />
 			<display:column property="latestY3" title="Y3" sortable="true" />

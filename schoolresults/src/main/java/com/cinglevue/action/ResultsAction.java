@@ -2,18 +2,19 @@ package com.cinglevue.action;
 
 import java.util.List;
 
-import org.springframework.core.io.Resource;
+import org.apache.struts2.ServletActionContext;
 
 import com.cinglevue.domain.Result;
 import com.cinglevue.domain.Subject;
 import com.cinglevue.service.ResultsService;
+import javax.servlet.http.HttpServletRequest;
 
 public class ResultsAction {
 
   // Results to pass to JSPs
-  List<Result> results;
-  List<Subject> uniqueSubjects;
-  private Resource jsonFile;
+  private List<Result> results;
+  private List<Subject> uniqueSubjects;
+  private String filterBySubject;
 
   public List<Subject> getUniqueSubjects() {
     return uniqueSubjects;
@@ -41,17 +42,15 @@ public class ResultsAction {
     this.resultsService = resultsService;
   }
 
-  public Resource getJsonFile() {
-    return jsonFile;
-  }
-
-  public void setJsonFile(Resource jsonFile) {
-    this.jsonFile = jsonFile;
-  }
-
   public String displayResults() throws Exception {
 
-    results = resultsService.getAllResults();
+    String filterBySubject = null;
+    // HttpServletRequest request = ServletActionContext.getRequest();
+    HttpServletRequest request = ServletActionContext.getRequest();
+    if(request.getParameterMap().containsKey("filterBySubject")){
+      filterBySubject = request.getParameter("filterBySubject");
+    }
+    results = resultsService.getAllResults(filterBySubject);
     uniqueSubjects = resultsService.getAllSubjects();
     return "DataLoaded";
 

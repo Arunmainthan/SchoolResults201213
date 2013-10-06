@@ -15,9 +15,9 @@ public class ResultsServiceImpl implements ResultsService {
   public void setResultsDao(ResultsDao resultsDao) {
     this.resultsDao = resultsDao;
   }
-  public List<Result> getAllResults() {
+  public List<Result> getAllResults(String filterBySubject) {
     // TODO Auto-generated method stub
-    return resultsDao.getAllResults();
+    return resultsDao.getAllResults(filterBySubject);
     
   }
   public List<Subject> getAllSubjects() {

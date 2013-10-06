@@ -7,7 +7,7 @@ import com.cinglevue.domain.Subject;
 
 public interface ResultsDao {
   
-  List<Result> getAllResults();
+  List<Result> getAllResults(String filterBySubject);
 
   List<Subject> getAllSubjects();
 

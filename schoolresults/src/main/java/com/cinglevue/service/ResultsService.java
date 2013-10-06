@@ -7,7 +7,7 @@ import com.cinglevue.domain.Subject;
 
 public interface ResultsService {
 
-  List<Result> getAllResults();
+  List<Result> getAllResults(String filterBySubject);
 
   List<Subject> getAllSubjects();
 

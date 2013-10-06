@@ -6,7 +6,6 @@
 
 	<!-- Action -->
 	<bean id="resultsAction" class="com.cinglevue.action.ResultsAction">
-		<property name="jsonFile" value="classpath:data.json" />
 		<property name="resultsService" ref="resultsService" />
 	</bean>
 
