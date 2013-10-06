@@ -20,6 +20,10 @@
 			linkhref = linkhref.replace("displayAllResultsSort", "displayAllResults");
 			$(link).attr("href",linkhref);
 		});
+		
+		$('#filterBy').on('change', function() {
+			window.location.href = "displayAllResults.action?filterBySubject=" + this.value;
+			});
 
 	});
 </script>
@@ -30,7 +34,7 @@
 
 	<div id="uniqueSubjectsDiv">
 		<s:select label="Filter By" headerKey="-1" headerValue="Select Filter"
-			list="uniqueSubjects" name="filterBy" value="defaultValue" />
+			list="uniqueSubjects" name="filterBy" value="filterBySubject" />
 	</div>
 	<div id="resultsDisplayDiv">
 		<jsp:include page="dataTable.jsp" />

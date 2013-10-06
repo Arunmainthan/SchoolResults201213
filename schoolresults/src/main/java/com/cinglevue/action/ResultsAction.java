@@ -2,12 +2,9 @@ package com.cinglevue.action;
 
 import java.util.List;
 
-import org.apache.struts2.ServletActionContext;
-
 import com.cinglevue.domain.Result;
 import com.cinglevue.domain.Subject;
 import com.cinglevue.service.ResultsService;
-import javax.servlet.http.HttpServletRequest;
 
 public class ResultsAction {
 
@@ -15,6 +12,14 @@ public class ResultsAction {
   private List<Result> results;
   private List<Subject> uniqueSubjects;
   private String filterBySubject;
+
+  public String getFilterBySubject() {
+    return filterBySubject;
+  }
+
+  public void setFilterBySubject(String filterBySubject) {
+    this.filterBySubject = filterBySubject;
+  }
 
   public List<Subject> getUniqueSubjects() {
     return uniqueSubjects;
@@ -44,13 +49,19 @@ public class ResultsAction {
 
   public String displayResults() throws Exception {
 
-    String filterBySubject = null;
-    // HttpServletRequest request = ServletActionContext.getRequest();
-    HttpServletRequest request = ServletActionContext.getRequest();
-    if(request.getParameterMap().containsKey("filterBySubject")){
-      filterBySubject = request.getParameter("filterBySubject");
+//    String filterBySubject = null;
+//    // HttpServletRequest request = ServletActionContext.getRequest();
+//    HttpServletRequest request = ServletActionContext.getRequest();
+//    if (request.getParameterMap().containsKey("filterBySubject")
+//        && !request.getParameter("filterBySubject").equals("-1")) {
+//      filterBySubject = request.getParameter("filterBySubject");
+//      this.filterBySubject = filterBySubject;
+//    }
+    String newFilterBySubject = null;
+    if(!this.filterBySubject.equals("-1")){
+      newFilterBySubject = this.filterBySubject;
     }
-    results = resultsService.getAllResults(filterBySubject);
+    results = resultsService.getAllResults(newFilterBySubject);
     uniqueSubjects = resultsService.getAllSubjects();
     return "DataLoaded";
 
