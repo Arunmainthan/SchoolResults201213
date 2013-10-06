@@ -65,12 +65,8 @@ public class ResultsAction {
    */
   public String displayResults() throws Exception {
 
-    String newFilterBySubject = null;
-    if (this.filterBySubject!=null && !this.filterBySubject.equals("-1")) {
-      newFilterBySubject = this.filterBySubject;
-    }
     //get the filtered results
-    results = resultsService.getAllResults(newFilterBySubject);
+    results = resultsService.getAllResults(filterBySubject);
     //get the distinct list of subjects
     uniqueSubjects = resultsService.getAllSubjects();
     return "DataLoaded";
