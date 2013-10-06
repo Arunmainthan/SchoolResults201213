@@ -14,7 +14,6 @@ public class ResultsAction {
   List<Result> results;
   List<Subject> uniqueSubjects;
   private Resource jsonFile;
-  private String sortBy;
 
   public List<Subject> getUniqueSubjects() {
     return uniqueSubjects;
@@ -42,14 +41,6 @@ public class ResultsAction {
     this.resultsService = resultsService;
   }
 
-  public String getSortBy() {
-    return sortBy;
-  }
-
-  public void setSortBy(String sortBy) {
-    this.sortBy = sortBy;
-  }
-
   public Resource getJsonFile() {
     return jsonFile;
   }
@@ -61,11 +52,7 @@ public class ResultsAction {
   public String displayResults() throws Exception {
 
     results = resultsService.getAllResults();
-    if (this.sortBy == null) {
-      uniqueSubjects = resultsService.getAllSubjects();
-
-    }
-
+    uniqueSubjects = resultsService.getAllSubjects();
     return "DataLoaded";
 
   }
