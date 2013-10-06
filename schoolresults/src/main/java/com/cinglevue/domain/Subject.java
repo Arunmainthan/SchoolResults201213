@@ -9,6 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+/**
+ * @author Arun
+ * Represents Subject with id and name
+ */
 @Entity
 @Table(name = "subject", catalog = "json", uniqueConstraints = @UniqueConstraint(columnNames = "SUBJECT_NAME"))
 public class Subject implements java.io.Serializable{
@@ -17,7 +21,10 @@ public class Subject implements java.io.Serializable{
     super();
   }
 
+  // Subject ID
   private Integer subjectId;
+  
+  // Subject Name
   private String subjectName;
   
   @Column(name = "SUBJECT_NAME", unique = true, nullable = false, length = 20)

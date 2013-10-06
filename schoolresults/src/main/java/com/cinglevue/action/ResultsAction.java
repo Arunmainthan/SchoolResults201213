@@ -6,65 +6,73 @@ import com.cinglevue.domain.Result;
 import com.cinglevue.domain.Subject;
 import com.cinglevue.service.ResultsService;
 
+/**
+ * @author Arun 
+ * Action class for displaying the School Results
+ */
 public class ResultsAction {
 
-  // Results to pass to JSPs
+  // List of Results
   private List<Result> results;
+  
+  // List of Unique Subjects
   private List<Subject> uniqueSubjects;
+  
+  // Filter parameter - Results will be filtered by subject
   private String filterBySubject;
+  
+  // Reference of the Service Layer
+  private ResultsService resultsService;
 
+  /**
+   * @return filterBySubject sent from View, accessible for View
+   */
   public String getFilterBySubject() {
     return filterBySubject;
   }
 
+  /**
+   * @param filterBySubject - filterBySubject value to set
+   */
   public void setFilterBySubject(String filterBySubject) {
     this.filterBySubject = filterBySubject;
   }
 
+  /**
+   * @return the distinct subjects list
+   */
   public List<Subject> getUniqueSubjects() {
     return uniqueSubjects;
   }
 
-  public void setUniqueSubjects(List<Subject> uniqueSubjects) {
-    this.uniqueSubjects = uniqueSubjects;
-  }
-
+  /**
+   * @return List of Result objects
+   */
   public List<Result> getResults() {
     return results;
   }
 
-  public void setResults(List<Result> results) {
-    this.results = results;
-  }
-
-  private ResultsService resultsService;
-
-  public ResultsService getResultsService() {
-    return resultsService;
-  }
-
+  /**
+   * @param resultsService - Service class to be injected from Spring
+   */
   public void setResultsService(ResultsService resultsService) {
     this.resultsService = resultsService;
   }
 
+  /**
+   * @return the result for the struts to proceed
+   * @throws Exception
+   */
   public String displayResults() throws Exception {
 
-//    String filterBySubject = null;
-//    // HttpServletRequest request = ServletActionContext.getRequest();
-//    HttpServletRequest request = ServletActionContext.getRequest();
-//    if (request.getParameterMap().containsKey("filterBySubject")
-//        && !request.getParameter("filterBySubject").equals("-1")) {
-//      filterBySubject = request.getParameter("filterBySubject");
-//      this.filterBySubject = filterBySubject;
-//    }
     String newFilterBySubject = null;
-    if(!this.filterBySubject.equals("-1")){
+    if (this.filterBySubject!=null && !this.filterBySubject.equals("-1")) {
       newFilterBySubject = this.filterBySubject;
     }
+    //get the filtered results
     results = resultsService.getAllResults(newFilterBySubject);
+    //get the distinct list of subjects
     uniqueSubjects = resultsService.getAllSubjects();
     return "DataLoaded";
-
   }
-
 }

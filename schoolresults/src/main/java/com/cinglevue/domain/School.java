@@ -8,6 +8,10 @@ import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Column;
 
+/**
+ * @author Arun
+ * Represents School with id and name
+ */
 @Entity
 @Table(name = "school", catalog = "json", uniqueConstraints = @UniqueConstraint(columnNames = "SCHOOL_NAME"))
 public class School implements java.io.Serializable {
@@ -15,7 +19,10 @@ public class School implements java.io.Serializable {
     super();
   }
 
+  // School ID
   private Integer schoolId;
+  
+  // School Name
   private String schoolName;
   
   @Id

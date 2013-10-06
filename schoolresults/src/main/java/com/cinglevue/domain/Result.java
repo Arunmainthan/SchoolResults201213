@@ -15,6 +15,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
+/**
+ * @author Arun
+ * Result Entity contains school,subject entities 
+ * and the stats
+ */
 @Entity
 @Table(name = "result", catalog = "json")
 public class Result implements Serializable {
@@ -23,10 +28,16 @@ public class Result implements Serializable {
     super();
   }
 
+  //Result ID
   private Integer resultID;
+  
+  // School
   private School school;
+  
+  // Subject
   private Subject subject;
 
+  // Results
   private Double latestY3;
   private Double latestY5;
   private Double latestY7;
