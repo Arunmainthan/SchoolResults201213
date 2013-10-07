@@ -24,9 +24,16 @@
 		$('#filterBy').on('change', function() {
 			window.location.href = "displayAllResults.action?filterBySubject=" + this.value;
 			});
+		
+		$("div#resultsDisplayDiv span.pagelinks a").addClass("pagination");
+		$("div.exportlinks a").addClass("export");
+		$("table.basic_grid tr").each(function(){
+			$(this).children(":first").addClass("blue");
+		});
 
 	});
 </script>
+<link href="../style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 

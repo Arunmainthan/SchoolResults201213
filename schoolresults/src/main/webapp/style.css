@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	
+}
+table.basic_grid td {
+	font-weight:normal;
+	color:#000000;
+	height:26px;
+	text-align:left;
+	padding: 0 0 0 5px;
+	border-bottom:1px solid #CDCDCD;
+	font-size:11px;
+}
+table.basic_grid th{
+	font-weight: normal;
+	background-color:#ffffff;
+	color:#000000;
+	text-align:left;
+	border:1px solid #CDCDCD;
+	height:30px;
+	padding: 0 5px 0 5px;
+	font-size:11px;
+}
+
+
+table.basic_grid th.center {
+	text-align:center;
+}
+table.basic_grid th.right {
+	text-align:right;
+}
+
+
+
+table.basic_grid th a {
+	text-decoration: none;
+	color:#000000;
+	font-weight:bold;
+}
+
+table.basic_grid th a {
+	text-decoration: none;
+	color:#000000;
+	font-weight:bold;
+}
+table.basic_grid th a:hover{
+
+	text-decoration:underline;
+}
+
+table.basic_grid td.right {
+	text-align:right;
+}
+table.basic_grid td.center {
+	text-align:center;
+}
+
+table.basic_grid td.blue {
+ color:#3788d0;
+}
+
+
+
+table.basic_grid td a {
+	text-decoration:none;
+}
+table.basic_grid td a:hover{
+
+	text-decoration:underline;
+}
+table.basic_grid tr.odd {
+	background-color:#EEEEEE;
+}
+table.basic_grid tr.even {
+	background-color:#FFFFFF;
+}
+
+a.pagination {
+	color: #1869a8;
+	text-decoration: underline;
+	font-weight: normal;
+	
+}
+a.pagination:hover {
+	text-decoration: underline;
+	color: #f68c1a;
+}
+
+
+a.export {
+	color: #1869a8;
+	text-decoration: none;
+	font-weight: normal;
+	
+}
+a.export:hover {
+	text-decoration: underline;
+	color: #1869a8;
+}
