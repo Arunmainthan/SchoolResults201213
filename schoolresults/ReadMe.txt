@@ -1,4 +1,4 @@
-
+﻿
 
 
 Technologies Used
@@ -17,9 +17,9 @@ JBoss AS 7
 
 About the App
 -------------
-The web application will display the table of results with sortable enabled for each column. In addition to sorting it will also allows to filter the results by a subject.
+The web application will display the table of results with sortable enabled for each column. In addition to sorting it will also allow to filter the results by a subject.
 
-How the technologies used
+How the technologies are used:
 1.	This is a MVC architecture based web application developed using the Struts 2 framework. 
 2.	The Spring framework is used for the dependency injection. Struts-Spring integration plugin is used for the spring to manage the life cycle of the action class.
 3.	Hibernate3 is used as the ORM tool. Hibernate entity classes are annotated, therefore I do not have any *.hbm.xml  files or the Hibernate.cfg.xml. Database settings are saved in the Database. Properties file. 
