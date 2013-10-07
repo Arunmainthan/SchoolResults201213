@@ -24,8 +24,6 @@
 		$('#filterBy').on('change', function() {
 			window.location.href = "displayAllResults.action?filterBySubject=" + this.value;
 			});
-		
-		$("div.exportlinks").hide();
 
 	});
 </script>
