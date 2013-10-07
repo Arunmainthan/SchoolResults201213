@@ -5,7 +5,7 @@
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 	<!-- Action -->
-	<bean id="resultsAction" class="com.cinglevue.action.ResultsAction">
+	<bean id="resultsAction" class="com.cinglevue.action.ResultsAction" scope="request">
 		<property name="resultsService" ref="resultsService" />
 	</bean>
 
