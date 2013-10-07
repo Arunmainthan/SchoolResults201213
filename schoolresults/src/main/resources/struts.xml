@@ -5,15 +5,23 @@
 
 <struts>
 	<package name="pages" namespace="/pages" extends="struts-default">
-	
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.NullPointerException"
+				result="error" />
+		</global-exception-mappings>
+
 		<!-- Build the page for the first load -->
 		<action name="displayAllResults" class="resultsAction" method="displayResults">
 			<result name="DataLoaded">main.jsp</result>
+			<result name="error">/Error.jsp</result>
 		</action>
-		
+
 		<!-- Build the table for AJax calls -->
-		<action name="displayAllResultsSort" class="resultsAction" method="displayResults">
+		<action name="displayAllResultsSort" class="resultsAction"
+			method="displayResults">
 			<result name="DataLoaded">dataTable.jsp</result>
+			<result name="error">/Error.jsp</result>
 		</action>
 	</package>
 </struts>
