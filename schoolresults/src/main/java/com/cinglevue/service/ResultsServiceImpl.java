@@ -2,6 +2,8 @@ package com.cinglevue.service;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.cinglevue.dao.ResultsDao;
 import com.cinglevue.domain.Result;
 import com.cinglevue.domain.Subject;
@@ -32,6 +34,7 @@ public class ResultsServiceImpl implements ResultsService {
    * @param filterBySubject - subject to filter
    * @return the list of Result objects filtered by subject
    */
+  @Transactional
   public List<Result> getAllResults(String filterBySubject) {
     // TODO Auto-generated method stub
     String newFilterBySubject = null;
@@ -50,6 +53,7 @@ public class ResultsServiceImpl implements ResultsService {
   /**
    * @return the distinct subjects list
    */
+  @Transactional
   public List<Subject> getAllSubjects() {
     // TODO Auto-generated method stub
     return resultsDao.getAllSubjects();
