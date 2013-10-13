@@ -71,4 +71,8 @@ public class ResultsAction {
     uniqueSubjects = resultsService.getAllSubjects();
     return "DataLoaded";
   }
+  
+  public void persistResult(Result result){
+	  resultsService.persistResult(result);
+  }
 }

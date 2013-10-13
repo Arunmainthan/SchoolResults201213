@@ -6,20 +6,26 @@ import com.cinglevue.domain.Result;
 import com.cinglevue.domain.Subject;
 
 /**
- * @author Arun
- * Dao Interface for Displaying Results
+ * @author Arun Dao Interface for Displaying Results
  */
 public interface ResultsDao {
 
-  /**
-   * @param filterBySubject - subject to filter
-   * @return the list of Result objects filtered by subject
-   */
-  List<Result> getAllResults(String filterBySubject);
+	/**
+	 * @param filterBySubject
+	 *            - subject to filter
+	 * @return the list of Result objects filtered by subject
+	 */
+	List<Result> getAllResults(String filterBySubject);
 
-  /**
-   * @return the distinct subjects list
-   */
-  List<Subject> getAllSubjects();
+	/**
+	 * @return the distinct subjects list
+	 */
+	List<Subject> getAllSubjects();
+
+	/**
+	 * @param result
+	 *            - result to be saved
+	 */
+	void persistResult(Result result);
 
 }

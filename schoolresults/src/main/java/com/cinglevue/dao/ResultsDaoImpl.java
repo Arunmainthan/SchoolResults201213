@@ -60,4 +60,13 @@ public class ResultsDaoImpl implements ResultsDao {
 				.list();
 	}
 
+	/**
+	 * @param result
+	 *            - result to be saved
+	 */
+	public void persistResult(Result result) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().save(result);
+	}
+
 }
