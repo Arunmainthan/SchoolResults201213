@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cinglevue.domain.Result;
 import com.cinglevue.domain.School;
@@ -18,6 +19,7 @@ public class ResultsActionTest {
 	private ResultsAction resultsAction;
 	
 	@Test
+	@Transactional
 	public void test() throws Exception {
 		//ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext1.xml");
 		//resultsAction = (ResultsAction)context.getBean("resultsAction");
