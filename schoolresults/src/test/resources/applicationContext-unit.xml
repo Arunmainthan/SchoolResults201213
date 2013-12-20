@@ -65,10 +65,11 @@
 			</value>
 		</property>
 	</bean>
-
-	<tx:annotation-driven />
-	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory"></property>
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>file:src/test/resources/config/database-unit.properties
+			</value>
+		</property>
 	</bean>
 </beans>
