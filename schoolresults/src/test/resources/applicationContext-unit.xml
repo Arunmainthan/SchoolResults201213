@@ -75,7 +75,7 @@
 
 	<tx:annotation-driven />
 	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager1">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 </beans>
